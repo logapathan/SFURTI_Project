@@ -1,0 +1,521 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #F5F5DC;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        overflow-x: hidden;
+    }
+    #ni-msme{
+        border-radius: 50%;
+    }
+    #mo-msme{
+        border-radius: 50%;
+        width: 70px;
+        
+    }
+    @keyframes gradient{
+        0%{background-color: #228B22;}
+    }
+    
+    #loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #F5F5DC;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10000;
+        transition: opacity 1s ease-out;
+    }
+    
+    .loading-text {
+        font-family: 'Merriweather', serif;
+        font-size: 3rem;
+        color: #228B22;
+        opacity: 1;
+        animation: fadeOut 3s forwards;
+    }
+    
+    @keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+    #intro{
+       
+        background: #fff;
+        
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+    
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background: linear-gradient(-45deg,#059212,#06D001);
+        color: #fff;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+    }
+    
+    .header-left img {
+        height: 50px;
+        margin-right: 10px;
+    }
+    
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+    
+    nav ul li {
+        position: relative;
+    }
+    
+    nav ul li a {
+        display: block;
+        padding: 10px 15px;
+        color: #fff;
+        text-decoration: none;
+    }
+    
+    nav ul li:hover > ul.dropdown {
+        display: block;
+        
+    }
+    
+    
+    .dropdown {
+        display: none;
+        position: absolute;
+        background: #228B22;
+        border: 3px solid #F3FF90;
+        border-radius: 5%;
+        z-index: 1000;
+        min-width: 150px;
+    }
+    .top:hover{
+        animation: hover ;
+        animation-duration: .2s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: both;
+        border-radius: 10%;
+        color: #059212;
+        
+
+    }
+    
+    .dropdown li a {
+        padding: 10px;
+        color: #fff;
+        
+    }
+    .dropdown li:hover{
+        background-color: #fff;
+        color: #059212;
+
+    }
+    .dropdown li:hover a{
+        background-color: #fff;
+        color: #059212;
+
+    }
+    @keyframes hover{
+        0%{background-color: #228B22;}
+        100%{background-color:#fff;}
+    }
+    .jump-links {
+        position: fixed;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1000;
+    }
+    
+    .jump-link {
+        display: block;
+        width: 10px;
+        height: 10px;
+        border: #FFD700 3px solid;
+        border-radius: 50%;
+        margin-bottom: 10px;
+        position: relative;
+        cursor: pointer;
+        transition: transform 0.3s, background 0.3s;
+    }
+    
+    .jump-link:hover {
+        background: #90EE90;
+        transform: scale(1.2);
+    }
+    
+    .jump-link:hover::after {
+        content: attr(data-text);
+        position: absolute;
+        left: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #FFD700;
+        color: #333;
+        padding: 5px 10px;
+        border-radius: 3px;
+        white-space: nowrap;
+        font-size: 0.9rem;
+    }
+    
+    .jump-link.active {
+        background: #FFD700;
+        transform: scale(1.2);
+    }
+    
+    main {
+        margin-top: 100px; /* Adjust according to header height */
+        padding: 20px;
+    }
+    
+    .cluster-header, .cluster-contents, .cluster-contacts, .cluster-news {
+        padding: 40px 20px;
+        background: #fff;
+        margin-bottom: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+    }
+    
+    h1, h2, h3 {
+        font-family: 'Merriweather', serif;
+        color: #228B22;
+    }
+    h1{
+        text-align: center;
+        color: #059212;
+        font-size: 50px;
+    }
+    h2{
+        color: #059212;
+        text-align: center;
+        font-size: 30px;
+        margin: 10px;
+    }
+    .cluster-name{
+        text-align: center;
+    }
+    .infra-item{
+        text-align: left;
+
+    }
+    .impact {
+        padding: 40px 20px;
+        text-align: left;
+        background: #fff
+    }
+
+    .impact-grid {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+
+    .impact-item {
+        flex: 1;
+        padding: 20px;
+        margin: 10px;
+        text-align: left;
+        background: #f3eeee;
+        border: 2px solid #228B22;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .impact-item:hover {
+        transform: scale(1.05);
+        background: linear-gradient(-45deg,#059212,#06D001,#9BEC00,#F3FF90);
+        background-size: 400% 400%;
+        animation: gradient 5s ease infinite;
+        color: #fff;
+
+    }
+    .impact-item .text{
+        transition: all 0.6s ease-in-out !important;
+    }
+    .impact-item:hover .text{
+        color: #fff !important;
+        
+    }
+
+    .impact-item h3 {
+        margin-bottom: 10px;
+        color: #059212;
+    }
+    .impact-item p{
+        color: #228B22;
+    }
+    @keyframes gradient{
+        0%{
+            background-position: 0% 50%;
+        }
+        50%{
+            background-position: 100% 50%;
+        }
+        100%{
+            background-position: 0% 50%;
+        }
+    }
+    .contain{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 20px;
+    }
+    #infra-content{
+        flex: 1;
+        
+    }
+    .infra-grid{
+        flex: 1.5;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        
+        
+    }
+    .infra-item{
+        flex: 1;
+        
+        margin: 10px;
+        
+    }
+    .infra-item img{
+        width: 100%;
+        min-width: 250px;
+        height: 250px;
+    }
+    
+    
+    .tagline {
+        font-style: italic;
+        color: #228B22;
+        text-align: center;
+    }
+    
+    .cluster-vitals {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding: 20px;
+        background: #fff;
+        margin-bottom: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+    }
+    
+    .vitals-item {
+        text-align: center;
+        flex: 1;
+        min-width: 150px;
+        margin: 10px;
+    }
+    
+    .products-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .product-item{
+        position: relative;
+        flex: 1 1 calc(33% - 20px);
+        background: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+    
+    .product-item img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .product-item:hover {
+        transform: scale(1.05);
+    }
+    .cluster-header{
+        padding: 50px;
+    }
+    .impact{
+        padding: 50px;
+        padding-top: 10px;
+    }
+    #intro-cluster{
+        
+        background: linear-gradient(rgba(250,250,250,0.4),rgba(250,250,250,0.8)),url("https://img.freepik.com/premium-photo/plantation-coconut-farm_87720-89608.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        text-align: center;
+    }
+    .item{
+        
+        position: relative;
+        padding-top: 100px;
+        padding-left: 10px;
+        padding-bottom: 10px;
+        padding-right: 10px;
+    }
+    .item2:hover .product-detail2{
+        top: 530px;
+        opacity: 0.9;
+        
+        transition: 0.3;
+
+    }
+    .item2:hover{
+        transform: scale(1.05);
+    }
+    .item3:hover .product-detail3{
+        top: 530px;
+        opacity: 0.9;
+        
+        transition: 0.3;
+
+    }
+    .item3:hover{
+        transform: scale(1.05);
+    }
+    .item4:hover .product-detail4{
+        top: 530px;
+        opacity: 0.9;
+        
+        transition: 0.3;
+
+    }
+    .item4:hover{
+        transform: scale(1.05);
+    }
+    .product-images{
+        width: 100%;
+        height: 500px;
+        border-radius: 10px;
+        
+
+    }
+    .contain2{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 20px;
+    }
+    #work-content{
+        flex: 1;
+    }
+    .infra-grid2{
+        display: flex;
+        flex: 1.5;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .infra-item{flex: 1;}
+    .infra-grid2 img{
+        min-width: 250px;
+        width: 100%;
+        height: 250px;
+        margin: 15px;
+    }
+    
+    .product-detail{
+        position: absolute;
+        background-color: white;
+        width: 100%;
+        height: 80px;
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-bottom: 10px;
+        padding-right: 10px;
+        top: 550px;
+        left: 0px;
+        opacity: 0;
+    }
+    #product-heading{
+        text-align: left;
+        font-size: 4rem;
+        color: black;
+        margin-bottom: 15px;
+    }
+    
+    #intro{
+        padding: 50px;
+        margin-top: 30px;
+        padding-top: 10px;
+    }
+    .cluster-contents{
+        padding: 50px;
+        padding-top: 10px;
+    }
+    #Collaborative{
+        text-align: center;
+    }
+    .cluster-contacts{
+        padding: 50px;
+        padding-top: 10px;
+    }
+    
+    .product-details {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        padding: 10px;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+    
+    .product-item:hover .product-details {
+        opacity: 1;
+    }
+   
+    footer {
+        padding: 20px;
+        background: linear-gradient(-45deg,#059212,#06D001);
+
+        color: #fff;
+        text-align: center;
+    }
+    
+    .footer-left img {
+        height: 50px;
+        margin-right: 10px;
+    }
+    
+    .footer-right {
+        margin-top: 10px;
+    }
+    
+    .footer-bottom {
+        margin-top: 10px;
+        font-size: 0.9rem;
+    }
+    svg{
+        margin-right: 10px;
+        margin-top: 2px;
+    }
